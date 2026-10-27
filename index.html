@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jalindra Translinks | Tata Signa 5532.S Commercial Logistics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Shared SVG Industrial Gradients & Drop Shadows -->
+  <svg width="0" height="0" style="position:absolute; pointer-events:none;" aria-hidden="true">
+    <defs>
+      <!-- Jalindra Translinks Brand Wing Gradient -->
+      <linearGradient id="brandWingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ff5500" />
+        <stop offset="38%" stop-color="#e11d48" />
+        <stop offset="72%" stop-color="#7c3aed" />
+        <stop offset="100%" stop-color="#1d4ed8" />
+      </linearGradient>
+
+      <!-- Tata Signa 5532.S Metallic Crimson-Terracotta Paint -->
+      <linearGradient id="tataSignaPaint" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ea580c" />
+        <stop offset="45%" stop-color="#c2410c" />
+        <stop offset="100%" stop-color="#7c2d12" />
+      </linearGradient>
+
+      <!-- Tata Signa Pearl White / Silver Upper Cab -->
+      <linearGradient id="tataPearlCab" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" />
+        <stop offset="65%" stop-color="#f1f5f9" />
+        <stop offset="100%" stop-color="#cbd5e1" />
+      </linearGradient>
+
+      <!-- Indian Highway Gold Trim -->
+      <linearGradient id="highwayGold" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fef08a" />
+        <stop offset="50%" stop-color="#f59e0b" />
+        <stop offset="100%" stop-color="#b45309" />
+      </linearGradient>
+
+      <!-- Cargo Block Gradients -->
+      <linearGradient id="safetyOrangeCargo" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ff7a29" />
+        <stop offset="100%" stop-color="#ea580c" />
+      </linearGradient>
+
+      <linearGradient id="terracottaCargo" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#dc2626" />
+        <stop offset="100%" stop-color="#991b1b" />
+      </linearGradient>
+
+      <linearGradient id="blueprintCargo" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#2563eb" />
+        <stop offset="100%" stop-color="#1e3a8a" />
+      </linearGradient>
+
+      <filter id="heavyShadow" x="-4%" y="-4%" width="108%" height="118%">
+        <feDropShadow dx="0" dy="10" stdDeviation="7" flood-color="#0f172a" flood-opacity="0.18"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- FIXED FULLSCREEN ENTERPRISE ARCHITECTURE -->
+  <div class="enterprise-shell">
+
+    <!-- ==================== 1. TOP COMMAND & TELEMETRY HEADER ==================== -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="window-dots" aria-hidden="true">
+          <span class="w-dot red"></span>
+          <span class="w-dot amber"></span>
+          <span class="w-dot green"></span>
+        </div>
+
+        <div class="brand-lockup">
+          <div class="brand-logo-frame">
+            <img src="Jalindra Translinks.png" alt="Jalindra Translinks Logo" class="js-brand-logo" />
+          </div>
+          <div class="brand-titles">
+            <div class="brand-main-name">
+              <span class="t-navy">JALINDRA</span>
+              <span class="t-grad">TRANSLINKS</span>
+            </div>
+            <div class="brand-sub-name">COMMERCIAL TRANSPORTATION &amp; LOGISTICS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Active Tractor Spec & Construction Status -->
+      <div class="topbar-center">
+        <div class="telemetry-pill-bar">
+          <span class="mono-spec">PRIME MOVER: TATA SIGNA 5532.S (6x2)</span>
+          <span class="sep-slash">//</span>
+          <span class="construction-chip">
+            <span class="pulse-ring"></span>
+            PORTAL UNDER CONSTRUCTION
+          </span>
+        </div>
+      </div>
+
+      <!-- Right: Live Scroll Meter & Leadership Jump -->
+      <div class="topbar-right">
+        <div class="scroll-meter">
+          <div class="sm-head">
+            <span>CONVOY DISPATCH</span>
+            <strong id="scroll-pct-display">0%</strong>
+          </div>
+          <div class="sm-track">
+            <div class="sm-fill" id="header-bar-fill"></div>
+          </div>
+        </div>
+
+        <button class="btn-leadership-jump" id="btn-jump-founder">
+          <span>Leadership Board</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ==================== 2. MAIN 4-COLUMN INDUSTRIAL WORKSPACE ==================== -->
+    <main class="dashboard-workspace">
+
+      <!-- COLUMN 1: Slim Architectural Icon Dock -->
+      <nav class="command-rail" aria-label="Dashboard Navigation">
+        <button class="rail-icon active" title="Live Convoy Dispatch">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
+            <rect x="1" y="3" width="15" height="13"></rect>
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+          </svg>
+        </button>
+        <button class="rail-icon" title="3-Trailer Payload Matrix">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          </svg>
+        </button>
+        <button class="rail-icon" title="Executive Leadership">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </button>
+        <div class="rail-spacer"></div>
+        <div class="india-flag-pill" title="All-India National Permit">
+          <span class="saffron"></span>
+          <span class="white"></span>
+          <span class="green"></span>
+        </div>
+      </nav>
+
+      <!-- COLUMN 2: Left Sequential Convoy Order & Corporate Leadership Summary -->
+      <aside class="side-panel">
+        <div class="panel-header">
+          <div>
+            <span class="eyebrow-label">SEQUENTIAL CONVOY ORDER</span>
+            <h3>Tata 5532.S + 3 Trailers</h3>
+          </div>
+          <span class="spec-badge">55T GCW</span>
+        </div>
+
+        <div class="unit-stack">
+          <div class="unit-item active" id="status-card-truck">
+            <div class="u-head">
+              <strong>01. Tata Signa 5532.S</strong>
+              <span class="u-pill orange" id="badge-truck">STANDBY</span>
+            </div>
+            <p>Flat-Nose COE • 320 HP Cummins</p>
+            <span class="u-mono">TRACTOR HEAD // RJ-14-JT-5532</span>
+          </div>
+
+          <div class="unit-item" id="status-card-t1">
+            <div class="u-head">
+              <strong>02. Trailer 01 • "SOMETHING"</strong>
+              <span class="u-pill" id="badge-t1">QUEUED</span>
+            </div>
+            <p>First Coupled Heavy Container</p>
+            <span class="u-mono">MODULE #01 // 18,500 KG</span>
+          </div>
+
+          <div class="unit-item" id="status-card-t2">
+            <div class="u-head">
+              <strong>03. Trailer 02 • "COMING"</strong>
+              <span class="u-pill" id="badge-t2">QUEUED</span>
+            </div>
+            <p>Second Coupled Express Container</p>
+            <span class="u-mono">MODULE #02 // 18,000 KG</span>
+          </div>
+
+          <div class="unit-item" id="status-card-t3">
+            <div class="u-head">
+              <strong>04. Trailer 03 • "SOON"</strong>
+              <span class="u-pill" id="badge-t3">QUEUED</span>
+            </div>
+            <p>Third Coupled Launch Container</p>
+            <span class="u-mono">MODULE #03 // 18,500 KG</span>
+          </div>
+        </div>
+
+        <!-- Official Brand Seal & Leadership Preview Card -->
+        <div class="brand-seal-card">
+          <div class="bs-top">
+            <span>OFFICIAL CARRIER SEAL</span>
+            <span class="bs-live">● REGISTERED</span>
+          </div>
+          <div class="bs-logo-box">
+            <img src="Jalindra Translinks.png" alt="Jalindra Translinks" class="js-brand-logo" />
+          </div>
+          <div class="bs-leadership-mini">
+            <div><span>FOUNDER:</span> <strong>AYUSH KUMAWAT</strong></div>
+            <div><span>CEO:</span> <strong>BASANT JANGIR</strong></div>
+            <div><span>FINANCE:</span> <strong>MEHUL JANGIR</strong></div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- COLUMN 3: CENTER INTERACTIVE STAGE + BOTTOM TELEMETRY -->
+      <section class="center-stage">
+
+        <!-- MAIN HIGHWAY & TATA SIGNA 5532.S STAGE CARD -->
+        <div class="highway-bay-card">
+
+          <!-- Top Stage Bar -->
+          <div class="bay-topbar">
+            <div class="bt-left">
+              <div class="unit-spec-chip">
+                <span class="chip-dot"></span>
+                <span id="live-convoy-caption">Initial Frame Empty — Scroll Down to Dispatch Tata Signa 5532.S from Right</span>
+              </div>
+              <h2 class="bay-title">
+                Available Freight Space
+                <span class="step-badge" id="stage-step-pill">STAGE 00 // EMPTY</span>
+              </h2>
+            </div>
+
+            <!-- Strict Sequential Order Stepper -->
+            <div class="sequence-bar">
+              <span class="seq-node" id="seq-truck">1. TATA 5532.S</span>
+              <span class="seq-node" id="seq-t1">2. SOMETHING</span>
+              <span class="seq-node" id="seq-t2">3. COMING</span>
+              <span class="seq-node" id="seq-t3">4. SOON</span>
+            </div>
+          </div>
+
+          <!-- INITIAL EMPTY-FRAME OVERLAY (Visible at 0% scroll before truck enters from right) -->
+          <div class="empty-frame-card" id="initial-empty-prompt">
+            <div class="efc-inner">
+              <div class="efc-logo-wrap">
+                <img src="Jalindra Translinks.png" alt="Jalindra Translinks Logo" class="js-brand-logo" />
+              </div>
+              <span class="efc-kicker">CORRIDOR CLEAR • TATA SIGNA 5532.S READY AT RIGHT</span>
+              <h3>Scroll Down to Roll the Convoy from Right to Left</h3>
+              <p>
+                <strong>1. Tata Signa 5532.S Head</strong> →
+                <strong>2. SOMETHING</strong> →
+                <strong>3. COMING</strong> →
+                <strong>4. SOON</strong> →
+                <strong>5. Leadership Reveal</strong>
+              </p>
+              <div class="efc-scroll-cue">
+                <span>← SCROLL DOWN TO DRIVE CONVOY FROM RIGHT ←</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==================== THE TATA SIGNA 5532.S + 3 TRAILERS CORRIDOR ==================== -->
+          <div class="highway-corridor" id="highway-corridor">
+
+            <!-- Convoy Wrapper: Starts 100% off-screen right at 0% scroll -->
+            <div class="convoy-train" id="convoy-train">
+
+              <!-- MASTER SVG: TRUE INDIAN FLAT-NOSE TATA SIGNA 5532.S COE + 3 TRAILERS (2380 x 330) -->
+              <svg class="convoy-svg" viewBox="0 0 2380 330" xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Continuous Road Shadow -->
+                <ellipse cx="1190" cy="298" rx="1135" ry="11" fill="rgba(15, 23, 42, 0.18)" />
+
+                <!-- ===================================================================================
+                     UNIT 01: TATA SIGNA 5532.S (6x2) — white high-roof sleeper COE tractor, side profile, faces LEFT
+                     =================================================================================== -->
+                <defs>
+                  <!-- Reusable tyre + rim (centred on 0,0) so every tractor wheel stays identical -->
+                  <g id="tsWheel">
+                    <circle r="33" fill="#0b1220" stroke="#1f2937" stroke-width="2" />
+                    <circle r="29.5" fill="none" stroke="#273449" stroke-width="5" stroke-dasharray="6 4.297" />
+                    <circle r="21" fill="#cbd5e1" stroke="#64748b" stroke-width="2" />
+                    <circle r="15" fill="#94a3b8" />
+                    <circle r="11" fill="none" stroke="#334155" stroke-width="4" stroke-dasharray="2 6.639" stroke-linecap="round" />
+                    <circle r="6" fill="#1d4ed8" stroke="#e2e8f0" stroke-width="1.5" />
+                    <rect x="-1.5" y="-27" width="3" height="6" rx="1" fill="#f59e0b" />
+                  </g>
+                  <linearGradient id="tsGlass" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#27415f" /><stop offset="1" stop-color="#0b1220" />
+                  </linearGradient>
+                  <linearGradient id="tsTank" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#f1f5f9" /><stop offset=".5" stop-color="#cbd5e1" /><stop offset="1" stop-color="#64748b" />
+                  </linearGradient>
+                  <linearGradient id="tsChrome" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0" stop-color="#64748b" /><stop offset=".45" stop-color="#f8fafc" /><stop offset="1" stop-color="#94a3b8" />
+                  </linearGradient>
+                </defs>
+
+                <g id="svg-tata-5532s-head" filter="url(#heavyShadow)">
+
+                  <!-- Suzie coils (air brake + ABS/electrical) running to the trailer -->
+                  <path d="M 226 172 C 300 172 400 214 528 196" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="5 3" />
+                  <path d="M 226 183 C 300 183 400 225 528 208" fill="none" stroke="#eab308" stroke-width="3" stroke-dasharray="5 3" />
+
+                  <!-- Ladder chassis + leaf spring packs over the lift axle and drive axle -->
+                  <rect x="80" y="232" width="440" height="14" rx="2" fill="#1f2937" stroke="#0b1220" stroke-width="1.5" />
+                  <rect x="304" y="250" width="72" height="5" rx="2" fill="#111827" />
+                  <rect x="394" y="250" width="72" height="5" rx="2" fill="#111827" />
+
+                  <!-- Cab entry steps, AdBlue tank, aluminium fuel tank -->
+                  <path d="M 162 232 V 260" stroke="#334155" stroke-width="3" />
+                  <rect x="160" y="240" width="26" height="5" rx="1.5" fill="#cbd5e1" stroke="#334155" stroke-width="1.2" />
+                  <rect x="160" y="254" width="26" height="5" rx="1.5" fill="#cbd5e1" stroke="#334155" stroke-width="1.2" />
+                  <rect x="190" y="240" width="20" height="28" rx="4" fill="#2563eb" stroke="#1e3a8a" stroke-width="1.5" />
+                  <rect x="195" y="236" width="10" height="5" rx="1" fill="#1d4ed8" />
+                  <rect x="214" y="238" width="60" height="38" rx="8" fill="url(#tsTank)" stroke="#475569" stroke-width="1.5" />
+                  <path d="M 230 238 V 276 M 258 238 V 276" stroke="#475569" stroke-width="3" />
+
+                  <!-- BS6 SCR silencer behind the cab + vertical chrome exhaust stack -->
+                  <rect x="234" y="192" width="44" height="40" rx="8" fill="url(#tsTank)" stroke="#475569" stroke-width="1.5" />
+                  <path d="M 248 192 V 232 M 264 192 V 232" stroke="#64748b" stroke-width="2" />
+                  <rect x="252" y="84" width="8" height="110" rx="3" fill="url(#tsChrome)" stroke="#64748b" stroke-width="1" />
+                  <ellipse cx="256" cy="84" rx="6" ry="2.5" fill="#e2e8f0" stroke="#64748b" stroke-width="1" />
+
+                  <!-- Rear mudguards (lift axle + drive axle) and mud flap -->
+                  <path d="M 298 262 A 42 42 0 0 1 382 262" fill="none" stroke="#111827" stroke-width="6" />
+                  <path d="M 388 262 A 42 42 0 0 1 472 262" fill="none" stroke="#111827" stroke-width="6" />
+                  <rect x="470" y="250" width="6" height="34" rx="1.5" fill="#111827" />
+
+                  <!-- Fifth-wheel coupling plate -->
+                  <path d="M 404 232 L 494 232 L 486 214 L 412 214 Z" fill="#334155" stroke="#94a3b8" stroke-width="1.5" />
+
+                  <!-- High-roof aero deflector -->
+                  <path d="M 84 97 C 124 92 168 80 214 73 L 222 73 L 224 97 Z" fill="url(#tataPearlCab)" stroke="#94a3b8" stroke-width="1.5" />
+
+                  <!-- Cab shell: near-vertical flat front, slightly raked windscreen, sleeper rear -->
+                  <path d="M 40 232 L 30 232 L 31 192 L 38 184 L 54 104 Q 56 96 66 96 L 204 96 Q 221 96 222 112 L 225 232 Z"
+                        fill="url(#tataPearlCab)" stroke="#94a3b8" stroke-width="2" />
+
+                  <!-- Sun visor with amber roof marker lamps -->
+                  <path d="M 44 101 L 92 96 L 92 103 L 52 109 Z" fill="#111827" />
+                  <path d="M 55 104 L 88 100" fill="none" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="5 4" />
+
+                  <!-- Windscreen edge, door window, sleeper window -->
+                  <path d="M 39 183 L 54 106 L 62 106 L 47 183 Z" fill="url(#tsGlass)" stroke="#0b1220" stroke-width="1" />
+                  <path d="M 68 113 L 162 113 L 162 170 L 56 170 Z" fill="url(#tsGlass)" stroke="#334155" stroke-width="2" />
+                  <path d="M 94 113 L 116 113 L 90 170 L 68 170 Z" fill="#ffffff" opacity="0.12" />
+                  <path d="M 72 119 Q 92 130 112 119 Q 132 130 152 119" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="3 2" />
+                  <rect x="178" y="118" width="34" height="34" rx="4" fill="url(#tsGlass)" stroke="#334155" stroke-width="2" />
+
+                  <!-- Door shut lines + handle -->
+                  <path d="M 168 108 V 226 M 174 108 V 226" fill="none" stroke="#94a3b8" stroke-width="1.2" />
+                  <rect x="150" y="178" width="14" height="4" rx="2" fill="#475569" />
+
+                  <!-- Jalindra livery: brand stripe + door lettering -->
+                  <path d="M 70 207 L 224 194 L 224 220 L 70 226 Z" fill="url(#brandWingGrad)" />
+                  <text x="112" y="186" font-family="'Cinzel', serif" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">JALINDRA</text>
+                  <text x="112" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="800" fill="#ea580c" text-anchor="middle" letter-spacing="1.6">TRANSLINKS</text>
+                  <text x="188" y="211" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="0.3">SIGNA 5532.S</text>
+
+                  <!-- Front: swept headlamp, Tata badge, lower intake grille -->
+                  <path d="M 31 199 L 64 203 L 65 218 L 31 220 Z" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.8" />
+                  <path d="M 34 203 L 58 206 L 59 214 L 34 216 Z" fill="#fde68a" />
+                  <rect x="66" y="208" width="6" height="4" rx="1" fill="#f59e0b" />
+                  <ellipse cx="34" cy="192" rx="2.8" ry="4" fill="#1d4ed8" stroke="#ffffff" stroke-width="1" />
+                  <rect x="30" y="221" width="26" height="11" rx="1.5" fill="#0b1220" />
+                  <path d="M 31 224.5 H 55 M 31 227.5 H 55 M 31 230.5 H 55" stroke="#64748b" stroke-width="0.9" />
+
+                  <!-- Cab sill, steel-grey bumper with fog lamp and tow-hook cover -->
+                  <rect x="86" y="226" width="139" height="6" fill="#1f2937" />
+                  <rect x="24" y="232" width="62" height="32" rx="6" fill="#1f2937" stroke="#475569" stroke-width="1.5" />
+                  <rect x="26" y="233" width="58" height="5" rx="2" fill="#475569" />
+                  <ellipse cx="38" cy="248" rx="5.5" ry="3.8" fill="#fde68a" stroke="#ffffff" stroke-width="0.8" />
+                  <rect x="48" y="252" width="14" height="5" rx="1.5" fill="#0b1220" />
+
+                  <!-- Front wheel arch + plastic mudguard -->
+                  <path d="M 86 232 A 44 44 0 0 1 150 232 Z" fill="#0b1220" />
+                  <path d="M 76 262 A 42 42 0 0 1 160 262" fill="none" stroke="#111827" stroke-width="6" />
+
+                  <!-- Main door mirror, wide-angle mirror and stay arms -->
+                  <path d="M 69 128 H 76 M 69 150 H 76" stroke="#111827" stroke-width="2.5" />
+                  <rect x="58" y="117" width="11" height="42" rx="3" fill="#111827" stroke="#64748b" stroke-width="1" />
+                  <rect x="60" y="120" width="4" height="36" rx="2" fill="#94a3b8" opacity="0.5" />
+                  <rect x="60" y="163" width="9" height="14" rx="2" fill="#111827" stroke="#64748b" stroke-width="1" />
+
+                  <!-- Bumper parandi tassel (swings on scroll) -->
+                  <g class="js-tassel" style="transform-origin: 36px 264px;">
+                    <line x1="36" y1="264" x2="39" y2="288" stroke="#0f172a" stroke-width="3.5" stroke-linecap="round" />
+                    <line x1="32" y1="264" x2="30" y2="286" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" />
+                    <circle cx="36" cy="272" r="2.6" fill="#fde047" />
+                  </g>
+                </g>
+
+                <!-- 6x2 axles: front steer (under cab), lift axle, rear drive axle -->
+                <g class="js-wheel" style="transform-origin: 118px 262px;"><use href="#tsWheel" x="118" y="262" /></g>
+                <g class="js-wheel" style="transform-origin: 340px 262px;"><use href="#tsWheel" x="340" y="262" /></g>
+                <g class="js-wheel" style="transform-origin: 430px 262px;"><use href="#tsWheel" x="430" y="262" /></g>
+
+
+                <!-- ===================================================================================
+                     UNIT 02: TRAILER 01 — "SOMETHING" (X: 525 -> 1085)
+                     =================================================================================== -->
+                <rect x="475" y="226" width="56" height="12" rx="3" fill="#334155" />
+                <circle cx="503" cy="232" r="4.5" fill="#facc15" />
+
+                <g id="svg-trailer-1" filter="url(#heavyShadow)">
+                  <rect x="525" y="48" width="560" height="198" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="3" />
+                  <rect x="527" y="50" width="556" height="9" rx="3" fill="url(#brandWingGrad)" />
+
+                  <!-- Structural Blueprint Grid Inside Trailer -->
+                  <g stroke="#e2e8f0" stroke-width="1.5">
+                    <line x1="620" y1="60" x2="620" y2="232" />
+                    <line x1="715" y1="60" x2="715" y2="232" />
+                    <line x1="810" y1="60" x2="810" y2="232" />
+                    <line x1="905" y1="60" x2="905" y2="232" />
+                    <line x1="1000" y1="60" x2="1000" y2="232" />
+                    <line x1="528" y1="116" x2="1082" y2="116" />
+                    <line x1="528" y1="174" x2="1082" y2="174" />
+                  </g>
+
+                  <!-- Safety Orange & Terracotta Freight Blocks -->
+                  <g class="js-cargo-boxes">
+                    <rect x="534" y="180" width="80" height="46" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="534" y="122" width="80" height="50" rx="4" fill="url(#terracottaCargo)" opacity="0.9" />
+                    <rect x="626" y="180" width="82" height="46" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="816" y="180" width="178" height="46" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="1006" y="64" width="70" height="48" rx="4" fill="url(#blueprintCargo)" />
+                    <rect x="1006" y="122" width="70" height="104" rx="4" fill="url(#safetyOrangeCargo)" />
+                  </g>
+
+                  <!-- Central Billboard Plate: "SOMETHING" -->
+                  <rect x="572" y="76" width="466" height="118" rx="12" fill="rgba(255, 255, 255, 0.97)" stroke="#cbd5e1" stroke-width="2.5" />
+                  <rect x="572" y="180" width="466" height="14" rx="3" fill="url(#brandWingGrad)" />
+
+                  <text x="805" y="100" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="800" fill="#ea580c" text-anchor="middle" letter-spacing="3.5">
+                    TRAILER MODULE 01 // COUPLED TO TATA 5532.S
+                  </text>
+                  <text x="805" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="52" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="4">
+                    SOMETHING
+                  </text>
+                  <text x="805" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="3">
+                    JALINDRA TRANSLINKS • COMMERCIAL LOGISTICS
+                  </text>
+
+                  <rect x="525" y="232" width="560" height="14" fill="#0f172a" />
+                  <rect x="655" y="246" width="210" height="16" rx="4" fill="#cbd5e1" />
+                </g>
+
+                <!-- Trailer 1 Tandem Wheels -->
+                <g class="js-wheel" style="transform-origin: 930px 262px;">
+                  <circle cx="930" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="930" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="930" cy="262" r="8" fill="#ea580c" />
+                  <line x1="930" y1="238" x2="930" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="906" y1="262" x2="954" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+                <g class="js-wheel" style="transform-origin: 1008px 262px;">
+                  <circle cx="1008" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="1008" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="1008" cy="262" r="8" fill="#ea580c" />
+                  <line x1="1008" y1="238" x2="1008" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="984" y1="262" x2="1032" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+
+
+                <!-- ===================================================================================
+                     UNIT 03: TRAILER 02 — "COMING" (X: 1135 -> 1695)
+                     =================================================================================== -->
+                <rect x="1080" y="226" width="60" height="12" rx="3" fill="#334155" />
+                <circle cx="1110" cy="232" r="4.5" fill="#facc15" />
+
+                <g id="svg-trailer-2" filter="url(#heavyShadow)">
+                  <rect x="1135" y="48" width="560" height="198" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="3" />
+                  <rect x="1137" y="50" width="556" height="9" rx="3" fill="url(#brandWingGrad)" />
+
+                  <g stroke="#e2e8f0" stroke-width="1.5">
+                    <line x1="1230" y1="60" x2="1230" y2="232" />
+                    <line x1="1325" y1="60" x2="1325" y2="232" />
+                    <line x1="1420" y1="60" x2="1420" y2="232" />
+                    <line x1="1515" y1="60" x2="1515" y2="232" />
+                    <line x1="1610" y1="60" x2="1610" y2="232" />
+                    <line x1="1138" y1="116" x2="1692" y2="116" />
+                    <line x1="1138" y1="174" x2="1692" y2="174" />
+                  </g>
+
+                  <g class="js-cargo-boxes">
+                    <rect x="1144" y="64" width="80" height="48" rx="4" fill="url(#blueprintCargo)" />
+                    <rect x="1144" y="180" width="174" height="46" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="1426" y="180" width="178" height="46" rx="4" fill="url(#terracottaCargo)" />
+                    <rect x="1616" y="122" width="70" height="104" rx="4" fill="url(#safetyOrangeCargo)" />
+                  </g>
+
+                  <!-- Central Billboard Plate: "COMING" -->
+                  <rect x="1182" y="76" width="466" height="118" rx="12" fill="rgba(255, 255, 255, 0.97)" stroke="#cbd5e1" stroke-width="2.5" />
+                  <rect x="1182" y="180" width="466" height="14" rx="3" fill="url(#brandWingGrad)" />
+
+                  <text x="1415" y="100" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="800" fill="#2563eb" text-anchor="middle" letter-spacing="3.5">
+                    TRAILER MODULE 02 // EXPRESS FREIGHT LINK
+                  </text>
+                  <text x="1415" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="54" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="5">
+                    COMING
+                  </text>
+                  <text x="1415" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="3">
+                    UNDER CONSTRUCTION • INDIA NATIONAL PERMIT
+                  </text>
+
+                  <rect x="1135" y="232" width="560" height="14" fill="#0f172a" />
+                  <rect x="1265" y="246" width="210" height="16" rx="4" fill="#cbd5e1" />
+                </g>
+
+                <!-- Trailer 2 Wheels -->
+                <g class="js-wheel" style="transform-origin: 1200px 262px;">
+                  <circle cx="1200" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="1200" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="1200" cy="262" r="8" fill="#2563eb" />
+                  <line x1="1200" y1="238" x2="1200" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="1176" y1="262" x2="1224" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+                <g class="js-wheel" style="transform-origin: 1540px 262px;">
+                  <circle cx="1540" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="1540" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="1540" cy="262" r="8" fill="#2563eb" />
+                  <line x1="1540" y1="238" x2="1540" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="1516" y1="262" x2="1564" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+                <g class="js-wheel" style="transform-origin: 1618px 262px;">
+                  <circle cx="1618" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="1618" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="1618" cy="262" r="8" fill="#2563eb" />
+                  <line x1="1618" y1="238" x2="1618" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="1594" y1="262" x2="1642" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+
+
+                <!-- ===================================================================================
+                     UNIT 04: TRAILER 03 — "SOON" (X: 1745 -> 2305)
+                     =================================================================================== -->
+                <rect x="1690" y="226" width="60" height="12" rx="3" fill="#334155" />
+                <circle cx="1720" cy="232" r="4.5" fill="#facc15" />
+
+                <g id="svg-trailer-3" filter="url(#heavyShadow)">
+                  <rect x="1745" y="48" width="560" height="198" rx="8" fill="#ffffff" stroke="#94a3b8" stroke-width="3" />
+                  <rect x="1747" y="50" width="556" height="9" rx="3" fill="url(#brandWingGrad)" />
+
+                  <g stroke="#e2e8f0" stroke-width="1.5">
+                    <line x1="1840" y1="60" x2="1840" y2="232" />
+                    <line x1="1935" y1="60" x2="1935" y2="232" />
+                    <line x1="2030" y1="60" x2="2030" y2="232" />
+                    <line x1="2125" y1="60" x2="2125" y2="232" />
+                    <line x1="2220" y1="60" x2="2220" y2="232" />
+                    <line x1="1748" y1="116" x2="2302" y2="116" />
+                    <line x1="1748" y1="174" x2="2302" y2="174" />
+                  </g>
+
+                  <g class="js-cargo-boxes">
+                    <rect x="1754" y="122" width="80" height="104" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="1846" y="180" width="178" height="46" rx="4" fill="url(#highwayGold)" />
+                    <rect x="2130" y="180" width="82" height="46" rx="4" fill="url(#safetyOrangeCargo)" />
+                    <rect x="2226" y="64" width="70" height="162" rx="4" fill="url(#terracottaCargo)" />
+                  </g>
+
+                  <!-- Central Billboard Plate: "SOON" -->
+                  <rect x="1792" y="76" width="466" height="118" rx="12" fill="rgba(255, 255, 255, 0.97)" stroke="#cbd5e1" stroke-width="2.5" />
+                  <rect x="1792" y="180" width="466" height="14" rx="3" fill="url(#brandWingGrad)" />
+
+                  <text x="2025" y="100" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="800" fill="#ea580c" text-anchor="middle" letter-spacing="3.5">
+                    TRAILER MODULE 03 // GRAND LAUNCH PAYLOAD
+                  </text>
+                  <text x="2025" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="56" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="6">
+                    SOON
+                  </text>
+                  <text x="2025" y="172" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="800" fill="#15803d" text-anchor="middle" letter-spacing="3">
+                    SCROLL FURTHER FOR EXECUTIVE BOARD REVEAL →
+                  </text>
+
+                  <!-- Rear Indian Highway Bumper Guard -->
+                  <rect x="2302" y="88" width="10" height="142" rx="3" fill="url(#highwayGold)" stroke="#78350f" stroke-width="1.5" />
+
+                  <rect x="1745" y="232" width="560" height="14" fill="#0f172a" />
+                  <rect x="1875" y="246" width="210" height="16" rx="4" fill="#cbd5e1" />
+                </g>
+
+                <!-- Trailer 3 Wheels -->
+                <g class="js-wheel" style="transform-origin: 1810px 262px;">
+                  <circle cx="1810" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="1810" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="1810" cy="262" r="8" fill="#f59e0b" />
+                  <line x1="1810" y1="238" x2="1810" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="1786" y1="262" x2="1834" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+                <g class="js-wheel" style="transform-origin: 2150px 262px;">
+                  <circle cx="2150" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="2150" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="2150" cy="262" r="8" fill="#f59e0b" />
+                  <line x1="2150" y1="238" x2="2150" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="2126" y1="262" x2="2174" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+                <g class="js-wheel" style="transform-origin: 2228px 262px;">
+                  <circle cx="2228" cy="262" r="33" fill="#0f172a" stroke="#475569" stroke-width="3" />
+                  <circle cx="2228" cy="262" r="18" fill="#e2e8f0" />
+                  <circle cx="2228" cy="262" r="8" fill="#f59e0b" />
+                  <line x1="2228" y1="238" x2="2228" y2="286" stroke="#1e293b" stroke-width="4" />
+                  <line x1="2204" y1="262" x2="2252" y2="262" stroke="#1e293b" stroke-width="4" />
+                </g>
+
+              </svg>
+
+            </div>
+
+            <!-- Heavy Asphalt Highway Track -->
+            <div class="highway-roadbed">
+              <div class="highway-lane-dashes" id="highway-lane-dashes"></div>
+              <div class="nh-marker">NH-48</div>
+            </div>
+
+          </div>
+
+          <!-- Stage Bottom Controls Bar -->
+          <div class="bay-footer">
+            <div class="bf-modes">
+              <button class="mode-btn active" id="btn-normal-view">Tata Signa 5532.S COE</button>
+              <button class="mode-btn" id="btn-glow-view">Highway Night Glow</button>
+            </div>
+
+            <div class="bf-density">
+              <button class="density-pill" data-density="1">1 Row</button>
+              <button class="density-pill" data-density="2">2 Row</button>
+              <button class="density-pill" data-density="3">3 Row</button>
+              <button class="density-pill active" data-density="4">4 Row</button>
+            </div>
+
+            <div class="bf-payload">
+              <span>GCW UTILIZATION:</span>
+              <strong id="total-payload-val">54,200 KG / 55,000 KG</strong>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- BOTTOM TELEMETRY DECK -->
+        <div class="telemetry-deck">
+
+          <!-- Card 1: Cummins ISBe 6.7L 320 HP Telemetry -->
+          <div class="telemetry-card">
+            <div class="tc-header">
+              <div>
+                <h4>Tata Signa 5532.S • Cummins 6.7L Telemetry</h4>
+                <span class="tc-sub">320 HP @ 2300 RPM • 1,250 Nm Torque</span>
+              </div>
+              <span class="mono-badge">G1150 9-SPEED</span>
+            </div>
+
+            <div class="tc-bars" id="tc-bars">
+              <span class="b-col" style="height:60%"></span>
+              <span class="b-col" style="height:78%"></span>
+              <span class="b-col" style="height:66%"></span>
+              <span class="b-col" style="height:88%"></span>
+              <span class="b-col" style="height:74%"></span>
+              <span class="b-col" style="height:92%"></span>
+              <span class="b-col" style="height:70%"></span>
+              <span class="b-col" style="height:96%"></span>
+              <span class="b-col" style="height:78%"></span>
+              <span class="b-col" style="height:86%"></span>
+              <span class="b-col" style="height:72%"></span>
+              <span class="b-col" style="height:94%"></span>
+              <span class="b-col" style="height:82%"></span>
+              <span class="b-col" style="height:90%"></span>
+              <span class="b-col" style="height:95%"></span>
+              <span class="b-col" style="height:100%"></span>
+            </div>
+
+            <div class="tc-footer">
+              <div>
+                <span class="tc-caption">Avg Efficiency</span>
+                <div class="tc-metric">6.8 MPG <small>(3.25 KMPL Heavy 55T)</small></div>
+              </div>
+              <div class="tc-right">
+                <span class="tc-caption">Convoy Velocity</span>
+                <strong id="convoy-speed-text">0 KM/H</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: National Freight Corridor Map -->
+          <div class="telemetry-card">
+            <div class="tc-header">
+              <div>
+                <h4>National Freight Corridor (Right → Left)</h4>
+                <span class="tc-sub">Jaipur HQ → Western Dedicated Freight Link</span>
+              </div>
+              <span class="mono-badge">LIVE GPS</span>
+            </div>
+
+            <div class="tc-map">
+              <svg class="route-svg" viewBox="0 0 400 88" xmlns="http://www.w3.org/2000/svg">
+                <g stroke="#e2e8f0" stroke-width="1">
+                  <line x1="0" y1="22" x2="400" y2="22" />
+                  <line x1="0" y1="44" x2="400" y2="44" />
+                  <line x1="0" y1="66" x2="400" y2="66" />
+                  <line x1="80" y1="0" x2="65" y2="88" />
+                  <line x1="200" y1="0" x2="215" y2="88" />
+                  <line x1="320" y1="0" x2="305" y2="88" />
+                </g>
+                <path d="M 365 66 L 255 24 L 145 60 L 35 22" fill="none" stroke="#cbd5e1" stroke-width="3.5" stroke-dasharray="6 4" />
+                <path id="map-active-line" d="M 365 66 L 255 24 L 145 60 L 35 22" fill="none" stroke="#ff5500" stroke-width="4" stroke-dasharray="380" stroke-dashoffset="380" stroke-linecap="round" />
+
+                <circle cx="365" cy="66" r="5.5" fill="#15803d" stroke="#fff" stroke-width="2" />
+                <text x="365" y="81" font-size="7.5" font-weight="800" fill="#334155" text-anchor="middle">5532.S</text>
+
+                <circle cx="255" cy="24" r="5.5" fill="#ea580c" stroke="#fff" stroke-width="2" />
+                <text x="255" y="13" font-size="7.5" font-weight="800" fill="#334155" text-anchor="middle">SOMETHING</text>
+
+                <circle cx="145" cy="60" r="5.5" fill="#2563eb" stroke="#fff" stroke-width="2" />
+                <text x="145" y="77" font-size="7.5" font-weight="800" fill="#334155" text-anchor="middle">COMING</text>
+
+                <circle cx="35" cy="22" r="6.5" fill="#dc2626" stroke="#fff" stroke-width="2" />
+                <text x="38" y="12" font-size="8" font-weight="900" fill="#dc2626" text-anchor="middle">SOON</text>
+              </svg>
+            </div>
+
+            <div class="tc-footer">
+              <div>
+                <span class="tc-caption">Active Corridor Stage</span>
+                <div class="tc-metric" id="map-stage-label">INITIAL FRAME (EMPTY)</div>
+              </div>
+              <div class="tc-right">
+                <span class="tc-caption">Distance</span>
+                <strong id="map-km-label">0 / 1,800 KM</strong>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- COLUMN 4: Right Permitted Cargo Boxes Manifest -->
+      <aside class="side-panel">
+        <div class="panel-header">
+          <div>
+            <span class="eyebrow-label">PERMITTED LOADING</span>
+            <h3>3-Trailer Manifest</h3>
+          </div>
+          <span class="spec-badge green">LOCKED</span>
+        </div>
+
+        <div class="manifest-stack">
+          <div class="manifest-card" id="manifest-card-1">
+            <div class="mc-top">
+              <strong>Box-#JT-1123-01</strong>
+              <span class="mc-tag orange">TRAILER 01</span>
+            </div>
+            <div class="mc-visual">
+              <span>✥</span>
+              <strong>SOMETHING</strong>
+              <span>✥</span>
+            </div>
+            <div class="mc-meta">
+              <span>⚡ Priority</span>
+              <span>₹45,000</span>
+              <span>18,500 kg</span>
+            </div>
+          </div>
+
+          <div class="manifest-card" id="manifest-card-2">
+            <div class="mc-top">
+              <strong>Box-#JT-1123-02</strong>
+              <span class="mc-tag blue">TRAILER 02</span>
+            </div>
+            <div class="mc-visual">
+              <span>✥</span>
+              <strong>COMING</strong>
+              <span>✥</span>
+            </div>
+            <div class="mc-meta">
+              <span>🛡 Insured</span>
+              <span>₹42,000</span>
+              <span>18,000 kg</span>
+            </div>
+          </div>
+
+          <div class="manifest-card" id="manifest-card-3">
+            <div class="mc-top">
+              <strong>Box-#JT-1123-03</strong>
+              <span class="mc-tag red">TRAILER 03</span>
+            </div>
+            <div class="mc-visual featured">
+              <span>✥</span>
+              <strong>SOON</strong>
+              <span>✥</span>
+            </div>
+            <div class="mc-meta">
+              <span>🚀 Final Link</span>
+              <span>₹48,000</span>
+              <span>18,500 kg</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </main>
+
+    <!-- ==================== 3. END-OF-SCROLL EXECUTIVE LEADERSHIP MONUMENT ==================== -->
+    <div class="founder-overlay-backdrop" id="founder-overlay-backdrop">
+      <div class="founder-reveal-modal" id="founder-reveal-modal">
+        <div class="fm-top-accent"></div>
+
+        <!-- Company Emblem & Status Header -->
+        <div class="fm-header-row">
+          <div class="fm-logo-frame">
+            <img src="Jalindra Translinks.png" alt="Jalindra Translinks Official Logo" class="js-brand-logo" />
+          </div>
+          <div class="fm-brand-meta">
+            <div class="fm-arrival-badge">
+              <span class="pulse-ring"></span>
+              <span>TATA SIGNA 5532.S CONVOY DELIVERED • LAUNCHING SOON</span>
+            </div>
+            <h2 class="fm-company-name">JALINDRA <span>TRANSLINKS</span></h2>
+            <p class="fm-company-sub">COMMERCIAL TRANSPORTATION, HEAVY HAULAGE &amp; DIGITAL FLEET LOGISTICS</p>
+          </div>
+        </div>
+
+        <div class="fm-divider"></div>
+
+        <!-- TIER 1: FOUNDER MONUMENT (Grows prominently) -->
+        <div class="leadership-founder-tier">
+          <span class="role-badge founder-role">VISIONARY &amp; FOUNDER</span>
+          <h1 class="fm-founder-name">AYUSH KUMAWAT</h1>
+          <p class="founder-quote">Architecting India's Next-Generation Commercial Freight &amp; Heavy Transport Network</p>
+        </div>
+
+        <!-- TIER 2: CEO & FINANCE MANAGER EXECUTIVE PILLARS -->
+        <div class="executive-pillars-grid">
+
+          <!-- CEO Card -->
+          <div class="exec-pillar-card ceo-card">
+            <div class="ep-top">
+              <span class="ep-tag orange">EXECUTIVE LEADERSHIP</span>
+              <span class="ep-code">BOARD // 01</span>
+            </div>
+            <span class="ep-role-label">CHIEF EXECUTIVE OFFICER (CEO)</span>
+            <h3 class="ep-person-name">BASANT JANGIR</h3>
+            <p class="ep-person-desc">Spearheading National Operations, Fleet Expansion &amp; Strategic Commercial Partnerships</p>
+          </div>
+
+          <!-- Finance Manager Card -->
+          <div class="exec-pillar-card finance-card">
+            <div class="ep-top">
+              <span class="ep-tag blue">CORPORATE FINANCE</span>
+              <span class="ep-code">BOARD // 02</span>
+            </div>
+            <span class="ep-role-label">FINANCE MANAGER</span>
+            <h3 class="ep-person-name">MEHUL JANGIR</h3>
+            <p class="ep-person-desc">Directing Capital Strategy, Freight Economics, Treasury &amp; Commercial Compliance</p>
+          </div>
+
+        </div>
+
+        <!-- Replay Action Button (Edit Founder Button Removed as Requested) -->
+        <div class="fm-actions">
+          <button class="btn-replay-solid" id="btn-replay-convoy">
+            <span>↺ Replay Tata Signa 5532.S Convoy Dispatch</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 600vh Scroll Runway for smooth Right-to-Left 4-stage passage -->
+  <div class="scroll-runway"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

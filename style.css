@@ -1,0 +1,1229 @@
+:root {
+  --bg-canvas: #e2e8f0;
+  --surface-card: #ffffff;
+  --surface-muted: #f8fafc;
+  --charcoal-deep: #0f172a;
+  --charcoal-mid: #1e293b;
+  --concrete-grey: #64748b;
+  --border-structural: #cbd5e1;
+  --border-light: #e2e8f0;
+  --safety-orange: #ff5500;
+  --terracotta: #c2410c;
+  --rust-red: #b91c1c;
+  --blueprint-blue: #1d4ed8;
+  --signal-green: #15803d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-canvas);
+  color: var(--charcoal-deep);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 600vh Scroll Runway for ultra-smooth Right-to-Left convoy physics */
+.scroll-runway {
+  height: 600vh;
+}
+
+.enterprise-shell {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+}
+
+/* ==================== 1. TOP COMMAND HEADER ==================== */
+.topbar {
+  height: 64px;
+  background: var(--surface-card);
+  border: 1px solid var(--border-structural);
+  border-radius: 14px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
+  flex-shrink: 0;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.window-dots {
+  display: flex;
+  gap: 6px;
+}
+.w-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.w-dot.red { background: #ef4444; }
+.w-dot.amber { background: #f59e0b; }
+.w-dot.green { background: #22c55e; }
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo-frame {
+  width: 72px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid var(--border-structural);
+  border-radius: 10px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.js-brand-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-main-name {
+  font-size: 1.22rem;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.t-navy {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  color: var(--charcoal-deep);
+}
+
+.t-grad {
+  font-weight: 900;
+  font-style: italic;
+  background: linear-gradient(90deg, var(--safety-orange), var(--rust-red), var(--blueprint-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-sub-name {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: var(--concrete-grey);
+}
+
+/* Center Spec & Status Pill */
+.telemetry-pill-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-structural);
+  padding: 6px 16px;
+  border-radius: 999px;
+}
+
+.mono-spec {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--charcoal-mid);
+}
+
+.sep-slash {
+  color: var(--border-structural);
+  font-weight: 800;
+}
+
+.construction-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: var(--terracotta);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.pulse-ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--safety-orange);
+  animation: pulseOrange 1.4s infinite;
+}
+
+@keyframes pulseOrange {
+  0% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0.65); }
+  70% { box-shadow: 0 0 0 7px rgba(255, 85, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 85, 0, 0); }
+}
+
+/* Right Scroll Meter */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.scroll-meter {
+  width: 150px;
+}
+
+.sm-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  font-weight: 800;
+  color: var(--concrete-grey);
+  margin-bottom: 4px;
+}
+
+.sm-head strong {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--safety-orange);
+}
+
+.sm-track {
+  width: 100%;
+  height: 7px;
+  background: var(--border-light);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.sm-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--safety-orange), var(--rust-red), var(--blueprint-blue));
+}
+
+.btn-leadership-jump {
+  background: var(--charcoal-deep);
+  color: #ffffff;
+  border: 1px solid var(--charcoal-mid);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.btn-leadership-jump:hover {
+  background: var(--safety-orange);
+  border-color: var(--safety-orange);
+}
+
+/* ==================== 2. 4-COLUMN WORKSPACE GRID ==================== */
+.dashboard-workspace {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 50px 245px 1fr 245px;
+  gap: 12px;
+  min-height: 0;
+}
+
+.command-rail {
+  background: var(--charcoal-deep);
+  border-radius: 14px;
+  padding: 14px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rail-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.rail-icon.active,
+.rail-icon:hover {
+  background: var(--safety-orange);
+  color: #ffffff;
+}
+
+.rail-spacer { flex: 1; }
+
+.india-flag-pill {
+  width: 24px;
+  height: 16px;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.india-flag-pill .saffron { flex: 1; background: #ff9933; }
+.india-flag-pill .white { flex: 1; background: #ffffff; }
+.india-flag-pill .green { flex: 1; background: #138808; }
+
+/* Side Panels */
+.side-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border-structural);
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.eyebrow-label {
+  display: block;
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  color: var(--concrete-grey);
+}
+
+.panel-header h3 {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.spec-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 3px 7px;
+  border-radius: 6px;
+  background: var(--surface-muted);
+  color: var(--charcoal-mid);
+  border: 1px solid var(--border-light);
+}
+
+.spec-badge.green {
+  background: #dcfce7;
+  color: var(--signal-green);
+  border-color: #bbf7d0;
+}
+
+.unit-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.unit-item {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-light);
+  transition: all 0.2s;
+}
+
+.unit-item.active {
+  background: #ffffff;
+  border-color: var(--safety-orange);
+  box-shadow: 0 6px 16px rgba(255, 85, 0, 0.1);
+}
+
+.u-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.u-head strong {
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.u-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.54rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: var(--charcoal-mid);
+}
+
+.u-pill.orange {
+  background: var(--safety-orange);
+  color: #ffffff;
+}
+
+.unit-item p {
+  font-size: 0.64rem;
+  color: var(--concrete-grey);
+}
+
+.u-mono {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: var(--terracotta);
+  margin-top: 2px;
+}
+
+/* Official Brand Seal & Leadership Summary in Left Sidebar */
+.brand-seal-card {
+  padding: 10px;
+  border-radius: 11px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-structural);
+}
+
+.bs-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.54rem;
+  font-weight: 800;
+  color: var(--concrete-grey);
+  margin-bottom: 5px;
+}
+
+.bs-live {
+  color: var(--signal-green);
+}
+
+.bs-logo-box {
+  height: 62px;
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.bs-leadership-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  border-top: 1px solid var(--border-light);
+  padding-top: 5px;
+}
+
+.bs-leadership-mini div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bs-leadership-mini span {
+  color: var(--concrete-grey);
+  font-weight: 700;
+}
+
+.bs-leadership-mini strong {
+  color: var(--charcoal-deep);
+  font-weight: 800;
+}
+
+/* ==================== CENTER STAGE & ARCHITECTURAL BLUEPRINT BAY ==================== */
+.center-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+}
+
+.highway-bay-card {
+  flex: 1.4;
+  background-color: #ffffff;
+  background-image: 
+    linear-gradient(to right, rgba(29, 78, 216, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(29, 78, 216, 0.045) 1px, transparent 1px);
+  background-size: 32px 32px;
+  border: 1px solid var(--border-structural);
+  border-radius: 14px;
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.bay-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 6;
+}
+
+.unit-spec-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ffffff;
+  border: 1px solid var(--border-structural);
+  padding: 4px 11px;
+  border-radius: 99px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--charcoal-mid);
+  margin-bottom: 4px;
+}
+
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--safety-orange);
+}
+
+.bay-title {
+  font-size: 1.04rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.step-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 6px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: var(--terracotta);
+}
+
+.sequence-bar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.seq-node {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 5px 10px;
+  border-radius: 7px;
+  background: #ffffff;
+  border: 1px solid var(--border-structural);
+  color: var(--concrete-grey);
+  transition: all 0.2s;
+}
+
+.seq-node.active {
+  background: var(--safety-orange);
+  color: #ffffff;
+  border-color: var(--safety-orange);
+  box-shadow: 0 4px 12px rgba(255, 85, 0, 0.25);
+}
+
+/* Initial Empty Frame Card */
+.empty-frame-card {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.efc-inner {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid var(--border-structural);
+  border-top: 4px solid var(--safety-orange);
+  border-radius: 16px;
+  padding: 18px 32px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  max-width: 560px;
+}
+
+.efc-logo-wrap {
+  height: 54px;
+  margin: 0 auto 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.efc-kicker {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: var(--terracotta);
+  background: #fff7ed;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 6px;
+}
+
+.efc-inner h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--charcoal-deep);
+  margin-bottom: 5px;
+}
+
+.efc-inner p {
+  font-size: 0.72rem;
+  color: var(--concrete-grey);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.efc-scroll-cue {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--blueprint-blue);
+  animation: slideLeftCue 1.2s infinite alternate;
+}
+
+@keyframes slideLeftCue {
+  from { transform: translateX(5px); }
+  to { transform: translateX(-5px); }
+}
+
+/* ==================== HIGHWAY CORRIDOR & TATA SIGNA 5532.S CONVOY ==================== */
+.highway-corridor {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.convoy-train {
+  position: absolute;
+  bottom: 24px;
+  left: 0;
+  width: 2380px;
+  height: 285px;
+  will-change: transform;
+  transform: translate3d(1400px, 0, 0);
+}
+
+.convoy-train.festival-glow {
+  filter: drop-shadow(0 0 18px rgba(255, 85, 0, 0.55));
+}
+
+.convoy-svg {
+  width: 2380px;
+  height: 285px;
+  display: block;
+}
+
+.highway-roadbed {
+  width: 100%;
+  height: 32px;
+  background: var(--charcoal-deep);
+  border-top: 3px solid #94a3b8;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.highway-lane-dashes {
+  width: 300%;
+  height: 3px;
+  background: repeating-linear-gradient(
+    90deg,
+    #facc15 0px,
+    #facc15 44px,
+    transparent 44px,
+    transparent 92px
+  );
+  will-change: transform;
+}
+
+.nh-marker {
+  position: absolute;
+  left: 14px;
+  background: #ffffff;
+  border: 2px solid var(--signal-green);
+  border-top: 6px solid #facc15;
+  color: var(--charcoal-deep);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* Stage Footer */
+.bay-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+  z-index: 6;
+}
+
+.bf-modes {
+  display: flex;
+  gap: 8px;
+}
+
+.mode-btn {
+  padding: 5px 11px;
+  border-radius: 7px;
+  border: 1px solid var(--border-structural);
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--charcoal-mid);
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  background: var(--charcoal-deep);
+  color: #ffffff;
+  border-color: var(--charcoal-deep);
+}
+
+.bf-density {
+  display: flex;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-structural);
+  padding: 2px;
+  border-radius: 8px;
+  gap: 4px;
+}
+
+.density-pill {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: var(--concrete-grey);
+  cursor: pointer;
+}
+
+.density-pill.active {
+  background: var(--safety-orange);
+  color: #ffffff;
+}
+
+.bf-payload {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--concrete-grey);
+}
+.bf-payload strong {
+  color: var(--charcoal-deep);
+}
+
+/* ==================== BOTTOM TELEMETRY DECK ==================== */
+.telemetry-deck {
+  flex: 0.6;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-height: 146px;
+}
+
+.telemetry-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-structural);
+  border-radius: 14px;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tc-header h4 {
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.tc-sub {
+  font-size: 0.63rem;
+  color: var(--concrete-grey);
+}
+
+.mono-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 800;
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #eff6ff;
+  color: var(--blueprint-blue);
+  border: 1px solid #bfdbfe;
+}
+
+.tc-bars {
+  height: 40px;
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.b-col {
+  flex: 1;
+  background: var(--border-light);
+  border-radius: 3px;
+  transition: background 0.2s;
+}
+
+.b-col.active {
+  background: linear-gradient(180deg, var(--safety-orange), var(--terracotta));
+}
+
+.tc-map {
+  height: 52px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.route-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tc-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.tc-caption {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--concrete-grey);
+}
+
+.tc-metric {
+  font-size: 0.84rem;
+  font-weight: 900;
+}
+
+.tc-metric small {
+  font-size: 0.62rem;
+  color: var(--concrete-grey);
+}
+
+.tc-right {
+  text-align: right;
+}
+
+.tc-right strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 800;
+  color: var(--safety-orange);
+}
+
+/* ==================== RIGHT MANIFEST STACK ==================== */
+.manifest-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.manifest-card {
+  padding: 11px;
+  border-radius: 11px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  transition: all 0.2s;
+}
+
+.manifest-card.active-trailer {
+  background: #fff7ed;
+  border-color: var(--safety-orange);
+  box-shadow: 0 6px 16px rgba(255, 85, 0, 0.12);
+}
+
+.mc-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mc-top strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.mc-tag {
+  font-size: 0.55rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+.mc-tag.orange { background: #ffedd5; color: var(--terracotta); }
+.mc-tag.blue { background: #dbeafe; color: var(--blueprint-blue); }
+.mc-tag.red { background: #fee2e2; color: var(--rust-red); }
+
+.mc-visual {
+  height: 30px;
+  background: #ffffff;
+  border: 1.5px solid var(--border-structural);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--charcoal-deep);
+}
+
+.mc-visual.featured {
+  background: linear-gradient(90deg, var(--safety-orange), var(--terracotta));
+  border-color: var(--terracotta);
+  color: #ffffff;
+}
+
+.mc-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--concrete-grey);
+}
+
+/* ==================== 3. EXECUTIVE LEADERSHIP MONUMENT OVERLAY ==================== */
+.founder-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.86);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.founder-reveal-modal {
+  position: relative;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 34px 44px;
+  max-width: 820px;
+  width: 94%;
+  box-shadow: 0 35px 90px rgba(0, 0, 0, 0.55);
+  border: 2px solid var(--border-structural);
+  transform: scale(0.2);
+  will-change: transform, opacity;
+  overflow: hidden;
+}
+
+.fm-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 9px;
+  background: linear-gradient(90deg, var(--safety-orange), var(--rust-red), var(--blueprint-blue));
+}
+
+.fm-header-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.fm-logo-frame {
+  width: 135px;
+  height: 92px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 8px;
+  border: 1px solid var(--border-structural);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fm-arrival-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff7ed;
+  border: 1px solid #fdba74;
+  color: var(--terracotta);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.fm-company-name {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--charcoal-deep);
+}
+
+.fm-company-name span {
+  color: var(--safety-orange);
+}
+
+.fm-company-sub {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: var(--concrete-grey);
+  margin-top: 2px;
+}
+
+.fm-divider {
+  height: 1px;
+  background: var(--border-light);
+  margin: 18px 0;
+}
+
+/* Tier 1: Founder Monument */
+.leadership-founder-tier {
+  text-align: center;
+  background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+  border: 1.5px solid #fed7aa;
+  border-radius: 18px;
+  padding: 18px 24px;
+  margin-bottom: 16px;
+}
+
+.role-badge {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: var(--safety-orange);
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.fm-founder-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4.5vw, 3.3rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--charcoal-deep) 0%, var(--rust-red) 50%, var(--safety-orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.15;
+}
+
+.founder-quote {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--concrete-grey);
+  margin-top: 4px;
+}
+
+/* Tier 2: CEO & Finance Manager Pillars */
+.executive-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.exec-pillar-card {
+  background: var(--surface-muted);
+  border: 1px solid var(--border-structural);
+  border-radius: 16px;
+  padding: 16px 20px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.exec-pillar-card.ceo-card {
+  border-top: 4px solid var(--safety-orange);
+}
+
+.exec-pillar-card.finance-card {
+  border-top: 4px solid var(--blueprint-blue);
+}
+
+.ep-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ep-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.56rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.ep-tag.orange { background: #ffedd5; color: var(--terracotta); }
+.ep-tag.blue { background: #dbeafe; color: var(--blueprint-blue); }
+
+.ep-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--concrete-grey);
+}
+
+.ep-role-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: var(--concrete-grey);
+  margin-bottom: 2px;
+}
+
+.ep-person-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--charcoal-deep);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.ep-person-desc {
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--concrete-grey);
+  line-height: 1.45;
+}
+
+.fm-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-replay-solid {
+  padding: 11px 24px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--charcoal-deep), var(--charcoal-mid));
+  border: 1px solid var(--charcoal-deep);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-replay-solid:hover {
+  background: var(--safety-orange);
+  border-color: var(--safety-orange);
+  transform: translateY(-1px);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1180px) {
+  .dashboard-workspace {
+    grid-template-columns: 48px 1fr 230px;
+  }
+  .dashboard-workspace > aside:first-of-type {
+    display: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .dashboard-workspace {
+    grid-template-columns: 1fr;
+  }
+  .command-rail,
+  .side-panel,
+  .topbar-center {
+    display: none;
+  }
+  .executive-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+  .fm-header-row {
+    flex-direction: column;
+    text-align: center;
+  }
+}
